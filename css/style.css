@@ -34,23 +34,33 @@ h1 {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   text-align: center;
   padding: 15px;
   max-width: 300px;
   margin: 0 auto;
+  position: relative;
 }
 .card img {
   width: 100%;
   height: auto;
-  position: relative;
+}
+.card:hover {
+  transform: scale(1.1) rotate(35deg);
+  transition: transform 0.5s;
+  z-index: 22;
+  .pin {
+    display: none;
+  }
 }
 .card p {
   margin: 10px;
 }
 .pin {
   position: absolute;
-  background-image: url("../img/pin.png");
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media screen and (min-width: 768px) {

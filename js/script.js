@@ -1,15 +1,3 @@
-/* 
-*Milestone 1*
-Sfruttando gli screen e gli asset in allegato riproduciamo la grafica proposta in maniera statica: utilizzando soltanto HTML e CSS e riproducendo una singola fotografia (usiamo una qualunque immagine a piacimento)
-*Milestone 2*
-Utilizzando Postman, testiamo una chiamata all’endpoint di JSON Placeholder:
-https://jsonplaceholder.typicode.com/photos?_limit=6
-Studiamo bene la risposta e i dati che ci fornisce iniziando a pensare a come poterli sfruttare.
-*Milestone 3*
-Inseriamo un foglio JavaScript ed effettuiamo una chiamata AJAX all’API di JSON Placeholder, sfruttando la risposta per generare dinamicamente in pagina una serie di foto!
-*Bonus*
-rendi la pagina responsive, in modo che su mobile e tablet le foto si dispongano man mano una sotto l’altra ed il titolo abbia una dimensione adeguata */
-
 /* albumId: 1;
 id: 1;
 thumbnailUrl: "https://via.placeholder.com/150/92c952";
@@ -26,10 +14,16 @@ axios
   .then((risposta) => {
     for (let i = 0; i < risposta.data.length; i++) {
       const dataApi = risposta.data[i];
+      const fraseFinale = dataApi.title
+        .split(" ")
+        .map((parola) => parola.charAt(0).toUpperCase() + parola.slice(1))
+        .join(" ");
       posts.innerHTML += `<div class="card">
+                <span class="pin"><img src="../img/pin.svg" alt=""></span>
                 <img src="${dataApi.url}">
-                <p>${dataApi.title}</p>
-            </div>`;
+                <p>${fraseFinale}</p>
+            </div>
+            `;
     }
   })
   .catch((errore) => {
@@ -38,4 +32,3 @@ axios
   .finally(() => {
     console.log("Chiamata dato terminata");
   });
-/* console.log(response.data); */
