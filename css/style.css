@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: edu tas beginner, sans-serif;
+  background-image: url("../img/cork.png");
+}
+
+h1 {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  background-image: url("../img/wall.png");
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.cardContainer {
+  max-width: 500px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 30px;
+  background-color: white;
+}
+
+.card {
+  border: 1px solid green;
+  width: 100%;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+.card p {
+  margin: 10px;
+}
