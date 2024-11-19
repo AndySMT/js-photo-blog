@@ -14,30 +14,52 @@ h1 {
   display: flex;
   justify-content: center;
   background-image: url("../img/wall.png");
+  padding: 20px;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 50px;
 }
 .cardContainer {
-  max-width: 500px;
-  border: 1px solid red;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 0 30px;
-  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
 }
 
 .card {
-  border: 1px solid green;
-  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  max-width: 300px;
+  margin: 0 auto;
 }
 .card img {
   width: 100%;
   height: auto;
+  position: relative;
 }
 .card p {
   margin: 10px;
+}
+.pin {
+  position: absolute;
+  background-image: url("../img/pin.png");
+}
+
+@media screen and (min-width: 768px) {
+  .cardContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cardContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
